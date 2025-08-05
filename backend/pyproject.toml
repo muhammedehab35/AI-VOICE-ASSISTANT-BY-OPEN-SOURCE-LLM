@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "voice-assistant"
+version = "0.1.0"
+description = ""
+authors = ["ruizguille <guillermo@codeawake.com>"]
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.1.0"
+groq = "^0.26.0"
+deepgram-sdk = "^4.1.0"
+requests = "^2.32.3"
+fastapi = {extras = ["standard"], version = "^0.115.12"}
+pydantic = "^2.11.5"
+pydantic-settings = "^2.9.1"
+httpx = "^0.28.1"
+
+[tool.poetry.group.local.dependencies]
+rich = "^14.0.0"
+pyaudio = "^0.2.14"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+local-assistant = "app.local_assistant:main"
